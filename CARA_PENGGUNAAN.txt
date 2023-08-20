@@ -1,0 +1,78 @@
+CLASS
+	- file class dibuat pada folder assets/php/classes
+	- nama file dari class yang dibuat harus ada .class.php
+	- nama dari class akan digunakan sebagai url/link ketika ingin menggunakan class
+	- class yang dibuat harus menggunakan "extends Controller"
+		contoh : class NamaClass extends Controller{ /* isi dari class NamaClass */ }
+	- fungsi/function yang harus ada pada class yang dibuat
+		- function __construct(){ /* isi dari fungsi __construct */ }
+		- function index(){/* isi dari fungsi index */}
+	- untuk lebih jelasnya bisa dilihat pada assets/php/classes/sample/sample.class.php
+
+VIEW & TEMPLATE
+	- file template harus berada dalam folder page/templates tanpa harus membuat folder baru
+	- file view harus berada dalam folder page dan harus buat folder baru
+	- nama file dari view/template yang dibuat harus ada .view.php
+	- nama dari file view/template akan digunakan pada fungsi show() dalam class
+	- isi dari file view/template berupa html
+	- jika memasukan data kedalam file view/template, gunakan variabel $data untuk mengambil isi data
+	- pada versi 1.1.2 ditambahkan template engine, cara penggunaan template engine dapat dilihat pada sample.class.php
+
+URL / LINK
+	- link yang digunakan, diambil dari dalam folder classes
+	- pada folder classes, buat folder baru untuk menyimpan file class
+	- nama dari folder yang dibuat, akan digunakan sebagai URL / LINK
+		contoh : www.domain.com/admin/dashboard/
+		dimana " admin " adalah folder dalam folder classes, dan " dashboard " adalah nama class dalam
+		" folder admin "
+	- nama class berbeda dengan nama file
+	- untuk file css, javascript, image, yang menggunakan href / src seperti contoh dibawah
+	  contoh : 
+	  		   - href="<?php echo BASEURL ?>assets/css/nama_file_css.css"
+	  		   - href="/assets/css/nama_file_css.css"
+	  		   - src="<?php echo BASEURL ?>assets/css/nama_file_javacript.js"
+	  		   - src="/assets/css/nama_file_javacript.js"
+	  		   
+AUTOUPDATE
+    - pada file pengaturan, atur nilai / value dari $_PENGATURAN['AUTO_UPDATE'] menjadi true untuk 
+      mendapatkan update terbaru
+    - jika aplikasi website terasa lambat, atur nilai / value dari $_PENGATURAN['AUTO_UPDATE'] 
+    	menjadi false
+    
+DATABASE
+    - untuk koneksi ke database, pengaturan host, user, password, dan database dapat diatur pada 
+      file "pengaturan.php" yang terdapat pada awal folder / root folder
+    - untuk versi dibawah dari 1.0.5, atur kembali database dalam file "pengaturan.php" pada
+    	bagian folder awal
+    	
+SECURITY
+    - keamanan file untuk request cross domain (permintaan antar domain) dapat diatur pada file "keamanan.php"
+    - untuk versi dibawah 1.0.8, tambahkan text $_PENGATURAN['404_FILE'] dalam file "pengaturan.php" untuk 
+      menampilkan halaman 404 yang dibuat
+    - file 404 harus berada dalam folder "error".
+    - nilai $_PENGATURAN['404_FILE'] harus sama dengan nama file yang dibuat dalam folder "error"
+      contoh :
+                - $_PENGATURAN['404_FILE'] = 'er_404.php';
+
+SIMULASI
+		- digunakan untuk menampilkan halaman tanpa harus membuat class
+		- pengaturan link atau url untuk halaman yang akan disimulasi berada pada file simulasi_url
+		- untuk lebih jelasnya, dokumentasi ada pada file simulasi_url
+		- jika file simulasi_url tidak ada, reload halaman website kalian
+
+ASSETS
+    - variable $_PENGATURAN['ALLOWED_ASSETS'] pada file pengaturan digunakan untuk mendefinisikan folder dalam
+      folder assets yang dapat diakses secara umum.
+    - nilai dari $_PENGATURAN['ALLOWED_ASSETS'] adalah array yang berisi nama folder yang dapat diakses
+      jika ingin mengakses folder customAssets, maka isi dari $_PENGATURAN['ALLOWED_ASSETS'] harus memiliki nilai customAssets
+      contoh :
+                - $_PENGATURAN['ALLOWED_ASSETS'] = ['js', 'customAssets', 'css'];
+    - link untuk mengakses file css yang berada dalam 'customAssets'
+      contoh :
+                - https://domain.com/assets/customAssets/nama_folder/nama_file.css  | mengakses file css yang berada dalam subfolder customAsset 
+                - https://domain.com/assets/customAssets/nama_file.css  | mengakses file css yang berada langsung dalam customAssets
+    - nilai bawaan dari $_PENGATURAN['ALLOWED_ASSETS'] adalah ['css', 'js', 'img', 'font', 'doc', 'QrData']
+    - jika variable $_PENGATURAN['ALLOWED_ASSETS'] belum ada pada file pengaturan.php, tambahkan dibagian
+      paling bawah file pengaturan.php
+      ditambahkan :
+      					- $_PENGATURAN['ALLOWED_ASSETS'] = ['css', 'js', 'img', 'font', 'doc', 'QrData'];

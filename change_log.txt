@@ -1,0 +1,208 @@
+Version 1.0.0
+Des-23-2022
+bug fix : -
+
+fitur : - membuat barcode
+	- menggunakan excelreader
+	- membuat qrcode
+	- membuat pdf
+	- autoload class
+
+Version 1.0.1
+Des-24-2022
+bug fix : - lokasi file tidak ditemukan ketika menggunakan href atau src dan diarahkan ke folder assets pada sintax html
+
+fitur : - tidak bisa mengakses file secara langsung dari url
+
+Version 1.0.2
+Des-26-2022
+bug fix : -
+
+fitur : - menggunakan nama class yang sama, tetapi pada folder berbeda
+
+Version 1.0.3
+Des-27-2022
+bug fix : -
+
+fitur : - update framework automatis sesuai dengan versi terbaru, folder dan file yang terdownload adalah folder bawaan dari framework ini
+
+Version 1.0.4
+Des-29-2022
+bug fix : - url "not found" ketika menggunakan 4 parameter pada url, contoh : https://domain.com/param_1/param_2/param_3/param_4
+          - class database dan class awal tidak ikut terdownload ketika pertama mendownload framework        
+
+fitur : -
+
+Versi 1.0.5
+Jan-13-2023
+bug fix : - tidak dapat membedakan protocol BASEURL ketika website online tetapi menggunakan http
+
+fitur : - pengaturan database terdapat pada file " pengaturan.php "
+        - dapat membedakan pengaturan database online dan offline
+        - autoupdate dipindah ke dalam file pengaturan.php
+        - untuk penggunaan online, tidak perlu mengatur nilai dari variable $_PENGATURAN['ROOR_DIR']
+
+Versi 1.0.6
+Jan-15-2023
+bug fix : - setelah dilakukan update, file bawaan saat mendownload pertama kali, masih terikut
+
+fitur : - update automatis ketika versi dari developer berubah
+        
+Versi 1.0.7
+Feb-19-2023
+bug fix : - parameter ke #2 dan #3 pada url tidak bisa menggunakan angka dan huruf, atau gabungan dari keduanya
+            contoh : https://domain.com/param_1/param_2/param_3/param_4
+            
+fitur : - tidak mengizinkan mengambil isi content html menggunakan file_get_contents dari php
+        - menambahkan keamanan untuk request cross domain, pada file keamanan.php
+        
+Versi 1.0.8
+Mar-02-2023
+bug fix : - tidak dapat menampilkan file error 404 ketika url tidak ditemukan
+
+fitur : - membuat list request yang akan diamankan ketika request cross domain
+        - menambahkan custom message untuk request cross domain yang diamankan
+        
+Versi 1.0.9
+Mar-09-2023
+bug fix : - ketika pindah halaman selalu ada slash pada akhir url
+
+fitur : - mengoptimalkan ukuran transfer html file dengan menghilangkan komentar dari html
+        - menambahkan pilihan slash atau tidak ketika menggunakan $this->view->pindah($url, $slash);
+          nilai default $slash : true
+          contoh :
+                  - ketika tidak ingin ada slash pada akhir url, gunakan  $this->view->pindah('url/yang_dituju', false);
+
+Versi 1.1.0
+Mar-15-2023
+bug fix : - tidak bisa menjalankan javascript ketika javascript di komentar
+
+fitur : -
+
+Versi 1.1.1
+Mar-16-2023
+bug fix : -
+
+fitur : - mengambil isi file view sebagai text
+
+Versi 1.1.2
+Mar-22-2023
+bug fix : -
+
+fitur : - menambahkan template engine untuk memudahkan pengaturan file
+
+Versi 1.1.3
+Mar-22-2023
+bug fix : - tidak bisa menampilkan halaman ketika menggunakan fungsi view->show('nama_file');
+          
+fitur : -
+
+Versi 1.1.4
+Mar-23-2023
+bug fix : - tidak dapat mengoptimalkan ukuran transfer file dari versi 1.0.9
+
+fitur : -
+
+Versi 1.1.5
+Mar-30-2023
+Bug fix : - tidak dapat mengoptimalkan besaran ukuran transfer file ketika menggunakan template
+          - akses tidak diizinkan ketika menggunakan ip versi 6 pada $_PENGATURAN['SECURE_CROSS']
+
+fitur : - validasi ip versi 4 dan ip versi 6 ketika mengakses web
+
+Versi 1.1.6
+Apr-25-2023
+bug fix : - 
+
+fitur : - membuat koneksi ke lebih dari 1 database
+
+Versi 1.1.7
+Mei-12-2023
+bug fix : - untuk php versi 8.2 keatas, aktifkan extension "php_zip.dll" pada file "php.ini" untuk menggunakan class ZipArchive dari php
+
+fitur : -
+
+Version 1.1.8
+Juni-4-2023
+bug fix : - tidak dapat mengextract Zip update file
+
+fitur : - menambahkan beberapa fungsi untuk class mysql
+
+Version 1.1.9
+Juni-5-2023
+bug fix : -
+
+fitur : - menambahkan file " memory_usage " untuk monitoring penggunaan RAM ketika mengakses website
+
+Version 1.2.0
+Juni-8-2023
+bug fix : - tidak bisa akses ke subfolder untuk folder assets/css | assets/js | assets/img 
+
+fitur : - 
+
+Version 1.2.1
+Juni-21-2023
+bug fix : - tidak dapat mengekstrak file update ketika selesai terdownload updatean terbaru
+
+fitur : -
+
+Versi 1.2.2
+Juni-23-2023
+bug fix : -
+
+fitur : - menghilangkan komentar dari html dan javascript ketika ditampilkan
+
+Versi 1.2.3
+Juni-25-2023
+bug fix : -
+
+fitur : - mengarahkan semua request/permintaan ke file index.php
+
+Versi 1.2.4
+Juni-26-2023
+bug fix : -
+
+fitur : - menambahkan fitur untuk simulasi halaman / tampilan.
+         - file simulasi_url akan dibuat ketika file tersebut tidak ada
+         - dokumentasi terkait fitur simulasi halaman berada pada file simulasi_url
+         
+Versi 1.2.5
+Juni-29-2023
+bug fix : - file assets dalam folder font | QrData yang tidak dapat diakses
+          - tidak dapat mengakses subfolder dalam assets ketika subfolder lebih dari 1
+fitur : -
+
+Versi 1.2.6
+Juli-11-2023
+bug fix : - file asset css, js, dan img tidak ditemukan ketika menggunakan simulasi_url
+
+fitur : -
+
+Versi 1.2.7
+Juli-31-2023
+bug fix : - memperbaiki path untuk pengambilan assets ketika ingin menggunakan folder tersendiri
+
+fitur : - menambahkan file cache untuk halaman yang akan ditampilkan
+        - menambahkan $_PENGATURAN['ALLOWED_ASSETS'] = ['css', 'js', 'img', 'font', 'doc', 'QrData'];
+          pada bagian akhir dari file pengaturan.php
+
+Versi 1.2.8
+Agustus-03-2023
+bug fix : -
+
+fitur : - bisa upload file dari local ke domain online sesuai dengan domain yang di tulis
+          pada .online_update
+        - untuk lebih jelasnya lihat dokumentasi pada file .online_update
+
+Versi 1.2.9
+Agustus-04-2023
+bug fix : - tidak dapat mengupload file menggunakan .online_update jika file tersebut 
+            lebih dari 1
+
+fitur : - 
+
+Versi 1.3.0
+Agustus-05-2023
+bug fix : -
+
+fitur : - bisa download file dari domain online ke locak menggunakan .online_update
